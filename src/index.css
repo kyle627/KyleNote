@@ -4,3 +4,6 @@ body {
   max-width: 38rem;
   padding: 2rem;
 }
+.add-note , .user-notes{
+  text-align: center;
+}

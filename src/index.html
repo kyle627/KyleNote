@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="index.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="./contents/bootstrap/4.5.3/css/bootstrap.min.css" />
+
+    <script src="index.js"></script>
  
     <!-- Bootstrap Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -15,8 +17,25 @@
 
   </head>
   <body>
-    <h1>💖 Hello World!</h1>
-    <p>Welcome to your Electron application.</p>
-
+    <div class="add-note">
+      <div class="card">
+        <h3 style="text-align: center;">Add Note</h3>
+        <div class="card-body">
+          <form class="form-group"> 
+            <textarea class="form-control" placeholder="Enter your note here" rows="8" cols="8" id="new-note"></textarea>
+          </form>
+        </div>
+      </div>
+      <button type="button" onclick="getNote()" class="btn btn-primary" style="margin-top: auto;">Save Note</button>
+    </div>
+    <div class="user-notes">
+      <div class="card">
+        <h3>Your Notes</h3>
+        <div class="card-body">
+          <div class="card-body-notes" id="card-body-notes">
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

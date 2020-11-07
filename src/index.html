@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>Hello World!</title>
+    <title>KyleText</title>
     <link rel="stylesheet" href="index.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="./contents/bootstrap/4.5.3/css/bootstrap.min.css" />
@@ -17,25 +17,23 @@
 
   </head>
   <body>
-    <div class="add-note">
-      <div class="card">
-        <h3 style="text-align: center;">Add Note</h3>
-        <div class="card-body">
-          <form class="form-group"> 
-            <textarea class="form-control" placeholder="Enter your note here" rows="8" cols="8" id="new-note"></textarea>
-          </form>
-        </div>
-      </div>
-      <button type="button" onclick="getNote()" class="btn btn-primary" style="margin-top: auto;">Save Note</button>
+    <div id="title">
+      <h1 style="font-size: 70px;">Kyle Text</h1>
     </div>
-    <div class="user-notes">
-      <div class="card">
-        <h3>Your Notes</h3>
-        <div class="card-body">
-          <div class="card-body-notes" id="card-body-notes">
-          </div>
-        </div>
+    <div class="grid" id="parent">
+      <div class="text-entry" id="left">
+        <h1>Enter Here</h1>
+        <textarea placeholder="Enter text here" id="entry"></textarea>
       </div>
+      <div class="text-out" id="right">
+        <h1>Changed Text</h1>
+        <textarea id="output"></textarea>
+      </div>
+    </div>
+    <div style="text-align: center; padding-top: 30px;">
+      <button class="btn btn-primary" onclick="toUpper()">UpperCase</button>
+      <button class="btn btn-primary" onclick="meme()">Random</button>
+      <button class="btn btn-primary" onclick="toLower()">LowerCase</button>
     </div>
   </body>
 </html>

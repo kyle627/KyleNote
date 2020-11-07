@@ -13,6 +13,8 @@ const createWindow = () => {
     height: 720,
   });
 
+  mainWindow.setResizable = false;  
+
   // and load the index.html of the app.
   mainWindow.loadFile(path.join(__dirname, 'index.html'));
 
@@ -46,14 +48,28 @@ app.on('activate', () => {
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and import them here.
 
-function getNote(){
-  let inNote = document.getElementById('new-note').value;
-  let div = document.getElementById('card-body-notes');
-  let output = document.createElement("textarea");
-  output.className = "form-control";
-  output.value = inNote;
-  output.cols = 8;
-  output.rows = 2;
-  div.appendChild(output);
-  document.getElementById('new-note').value = "Enter another note";
+function toUpper(){
+  let phrase = document.getElementById('entry').value.toUpperCase();
+  document.getElementById('output').value = phrase;
+}
+
+function toLower(){
+  let phrase = document.getElementById('entry').value.toLowerCase();
+  document.getElementById('output').value = phrase;
+}
+
+function meme(){
+  let out = "";
+  let phrase = document.getElementById('entry').value
+
+  for (var i = 0; i < phrase.length; i++) {
+    if(Math.random() > .5){
+      out += phrase.charAt(i).toUpperCase();
+    } else {
+      out += phrase.charAt(i).toLowerCase();
+    }
+  }
+  
+ document.getElementById('output').value = out;
+
 }
